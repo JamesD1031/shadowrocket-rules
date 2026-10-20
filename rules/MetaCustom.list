@@ -1,0 +1,4 @@
+# Personal predicates only; policy is assigned by config/manifest.json.
+DOMAIN-SUFFIX,muse.ai
+DOMAIN-SUFFIX,threads.net
+DOMAIN-SUFFIX,threads.com

@@ -1,0 +1,11 @@
+{
+  "policy_aliases": {"谷歌AI": "谷歌服务", "Facebook": "Facebook(Meta)"},
+  "preferred_nodes": {"谷歌服务": "CF-VLESS-WARP-80"},
+  "rules": [
+    {"file": "rules/DirectCustom.list", "policy": "DIRECT"},
+    {"file": "rules/UpstreamCustom.list", "policy": "前置"},
+    {"file": "rules/GitHubCustom.list", "policy": "GitHub"},
+    {"file": "rules/GoogleOverrides.list", "policy": "谷歌服务"},
+    {"file": "rules/MetaCustom.list", "policy": "Facebook(Meta)"}
+  ]
+}

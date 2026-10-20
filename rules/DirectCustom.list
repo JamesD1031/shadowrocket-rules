@@ -1,0 +1,8 @@
+# Personal predicates only; policy is assigned by config/manifest.json.
+DOMAIN-SUFFIX,cf.090227.xyz
+DOMAIN,warp.jame.codes
+IP-CIDR,172.64.149.159/32,no-resolve
+IP-CIDR,20.46.119.115/32,no-resolve
+DOMAIN-SUFFIX,yuketang.cn
+DOMAIN-SUFFIX,sustech.edu.cn
+DOMAIN-SUFFIX,hybgzs.com

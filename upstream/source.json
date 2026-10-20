@@ -1,0 +1,11 @@
+{
+  "repository": "LOWERTOP/Shadowrocket",
+  "path": "lazy_group.conf",
+  "branch": "main",
+  "commit": "e1ee7d7a201fe55cfa3ec8f93d70fd6a76a33a3f",
+  "source_url": "https://raw.githubusercontent.com/LOWERTOP/Shadowrocket/e1ee7d7a201fe55cfa3ec8f93d70fd6a76a33a3f/lazy_group.conf",
+  "tracking_url": "https://raw.githubusercontent.com/LOWERTOP/Shadowrocket/main/lazy_group.conf",
+  "sha256": "2b9a7e621301fcf4cf5ff572a6d00fda52186495c138577c6035c3b912279a86",
+  "fetched_on": "2026-10-20",
+  "source_file_date": "2026-10-15"
+}

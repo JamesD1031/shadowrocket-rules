@@ -1,0 +1,52 @@
+name: Update cloud routing rules
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-rules.yml'
+      - 'tools/**'
+      - 'tests/**'
+      - 'rules/**'
+      - 'config/**'
+      - 'upstream/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-routing-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    # The public delivery repository is the only unattended publisher.
+    if: github.repository == 'JamesD1031/shadowrocket-rules'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Check for an upstream update
+        run: python3 tools/update_upstream.py --archive
+      - name: Verify maintenance tools and public module
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 tools/render_module.py
+      - name: Publish validated changes
+        run: |
+          git add upstream release/routing.module
+          if git diff --cached --quiet; then
+            echo 'No upstream rule changes.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update validated cloud routing rules'
+          git push origin HEAD:main
+          echo 'Updated public routing module; no manual PR merge is required.' >> "$GITHUB_STEP_SUMMARY"
