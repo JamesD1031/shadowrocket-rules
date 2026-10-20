@@ -4,6 +4,9 @@ import argparse
 import json
 import os
 import re
+import urllib.parse
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from collections import OrderedDict
 from pathlib import Path
 
@@ -90,15 +93,21 @@ def rule_with_policy(line, policy):
 
 
 def canonical_rule(line):
-    return re.sub(r'\s+', '', line).casefold()
+    return re.sub(r'\s+', '', split_remark(line)[0]).casefold()
+
+
+def split_remark(line):
+    parts = line.split(' // ', 1)
+    return parts[0].strip(), parts[1].strip() if len(parts) > 1 else ''
 
 
 def remap_rule(line, aliases):
-    parts = [p.strip() for p in line.split(',')]
+    raw, remark = split_remark(line)
+    parts = [p.strip() for p in raw.split(',')]
     index = 1 if parts[0].upper() == 'FINAL' else 2
     if len(parts) > index:
         parts[index] = aliases.get(parts[index].casefold(), parts[index])
-    return ','.join(parts)
+    return ','.join(parts) + (' // ' + remark if remark else '')
 
 
 def build(upstream_text, local_text, manifest, root=ROOT, previous_text=None, initial=False):
@@ -140,14 +149,23 @@ def build(upstream_text, local_text, manifest, root=ROOT, previous_text=None, in
     result['proxy group'] = [f'{k} = {v}' for k, v in groups.values()]
 
     rules = [BEGIN]
-    for spec in manifest['rules']:
-        path = (Path(root) / spec['file']).resolve()
-        if not path.is_relative_to(Path(root).resolve()):
-            raise ValueError('Rule file outside repository')
-        rules.append('# ' + spec['file'] + ' -> ' + spec['policy'])
-        rules.extend(rule_with_policy(s, spec['policy']) for s in active(path.read_text().splitlines()))
-    rules.append(END)
-    rules.extend(remap_rule(s, aliases) for s in active(upstream['rule']))
+    if manifest.get('bundled_rules'):
+        from render_module import bundle_plan, rule_line
+        if upstream_text != (Path(root) / 'upstream/lazy_group.conf').read_text():
+            raise ValueError('Bundled build must use its validated upstream snapshot')
+        entries, _ = bundle_plan(root)
+        rules.extend(rule_line(entry['rule'], entry['title']) for entry in entries)
+        rules.append(END)
+        rules.extend(s for s in active(upstream['rule']) if s.startswith('FINAL,'))
+    else:
+        for spec in manifest['rules']:
+            path = (Path(root) / spec['file']).resolve()
+            if not path.is_relative_to(Path(root).resolve()):
+                raise ValueError('Rule file outside repository')
+            rules.append('# ' + spec['file'] + ' -> ' + spec['policy'])
+            rules.extend(rule_with_policy(s, spec['policy']) for s in active(path.read_text().splitlines()))
+        rules.append(END)
+        rules.extend(remap_rule(s, aliases) for s in active(upstream['rule']))
     result['rule'] = rules
     result['host'] = merged_values(upstream.get('host', []), local.get('host', []), previous.get('host'))
     old_rewrites = set(active(previous.get('url rewrite', [])))
@@ -162,7 +180,7 @@ def build(upstream_text, local_text, manifest, root=ROOT, previous_text=None, in
     known = set(groups) | {'direct', 'proxy', 'reject', 'reject-drop', 'reject-tinydrop'}
     known |= set(kv(result['proxy']))
     for line in active(result['rule']):
-        fields = line.split(',')
+        fields = split_remark(line)[0].split(',')
         policy = fields[1] if fields[0] == 'FINAL' else fields[2]
         if policy.casefold() not in known:
             raise ValueError('Rule references undefined policy: ' + policy)
@@ -172,16 +190,42 @@ def build(upstream_text, local_text, manifest, root=ROOT, previous_text=None, in
     return text
 
 
+def verify_publication(root=ROOT, proxy=None):
+    """Fail before writing a bundled local config unless its immutable files are live."""
+    from render_module import BASE_URL, bundle_plan
+    if proxy:
+        parsed = urllib.parse.urlsplit(proxy)
+        if parsed.scheme != 'http' or parsed.hostname not in {'127.0.0.1', 'localhost', '::1'} or parsed.username or parsed.password:
+            raise ValueError('Only a local, credential-free HTTP proxy URL is accepted')
+    _, artifacts = bundle_plan(root)
+    def verify(item):
+        name, expected = item
+        handler = urllib.request.ProxyHandler({'http': proxy, 'https': proxy}) if proxy else urllib.request.ProxyHandler()
+        opener = urllib.request.build_opener(handler)
+        with opener.open(BASE_URL + name, timeout=25) as response:
+            actual = response.read(len(expected.encode('utf-8')) + 1)
+        if actual != expected.encode('utf-8'):
+            raise ValueError('Public bundle differs from the local source: ' + name)
+    try:
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            list(pool.map(verify, artifacts.items()))
+    except Exception as error:
+        raise ValueError('Publish and verify the new cloud bundles before building a local configuration') from error
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--local', type=Path, required=True, help='Fresh private full export, outside the repository')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--previous-upstream', type=Path)
     parser.add_argument('--initial-migration', action='store_true')
+    parser.add_argument('--proxy', help='Optional local HTTP proxy for verifying published bundles')
     args = parser.parse_args()
     if args.local.resolve().is_relative_to(ROOT):
         parser.error('Local export must be outside the repository')
     manifest = json.loads((ROOT / 'config/manifest.json').read_text())
+    if manifest.get('bundled_rules'):
+        verify_publication(ROOT, args.proxy)
     previous = args.previous_upstream.read_text() if args.previous_upstream else None
     text = build((ROOT / 'upstream/lazy_group.conf').read_text(), args.local.read_text(), manifest, previous_text=previous, initial=args.initial_migration)
     write_private(args.output, text)

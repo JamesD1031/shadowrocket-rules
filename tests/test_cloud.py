@@ -36,8 +36,40 @@ class CloudTests(unittest.TestCase):
         self.assertEqual(list(renderer.parse(text)), ['rule'])
         self.assertNotIn('FINAL,', text)
         self.assertNotIn('谷歌AI', text)
-        self.assertIn('antigravity-unleash.goog,谷歌服务', text)
-        self.assertIn('20.46.119.115/32,DIRECT,no-resolve', text)
+        entries, artifacts = renderer.bundle_plan(self.root)
+        self.assertTrue(artifacts)
+        flattened = [line for entry in entries for line in entry['expanded']]
+        self.assertEqual(flattened, renderer.expanded_rules(self.root))
+        self.assertIn('DOMAIN,antigravity-unleash.goog,谷歌服务', flattened)
+        self.assertIn('IP-CIDR,20.46.119.115/32,DIRECT,no-resolve', flattened)
+        self.assertIn(' // Google · 常规服务', text)
+        for entry in entries:
+            if 'bundle' in entry:
+                policy = entry['rule'].split(',')[2]
+                actual = [renderer.rule_with_policy(s, policy) for s in renderer.active(artifacts[entry['bundle']].splitlines())]
+                self.assertEqual(actual, entry['expanded'])
+
+    def test_supported_upstream_addition_keeps_auto_publication_working(self):
+        path = self.root / 'upstream/lazy_group.conf'
+        self.change_source(path.read_text().replace('\nFINAL,PROXY\n', '\nDOMAIN,new-supported.example,AI\nFINAL,PROXY\n'))
+        entries, _ = renderer.bundle_plan(self.root)
+        self.assertEqual([r for e in entries for r in e['expanded']], renderer.expanded_rules(self.root))
+        self.assertIn('DOMAIN,new-supported.example,AI', [r for e in entries for r in e['expanded']])
+
+    def test_local_publication_check_rejects_unpublished_or_changed_bundle(self):
+        import build
+        with patch.object(build.urllib.request, 'build_opener') as make:
+            make.return_value.open.side_effect = OSError('not published')
+            with self.assertRaisesRegex(ValueError, 'Publish and verify'):
+                build.verify_publication(self.root)
+        class Response:
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def read(self, size): return b'wrong content'
+        with patch.object(build.urllib.request, 'build_opener') as make:
+            make.return_value.open.return_value = Response()
+            with self.assertRaisesRegex(ValueError, 'Publish and verify'):
+                build.verify_publication(self.root)
 
     def test_hash_mismatch_blocks_publication(self):
         with (self.root / 'upstream/lazy_group.conf').open('a') as f:

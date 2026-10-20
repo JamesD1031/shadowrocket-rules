@@ -99,18 +99,19 @@ class BuildTests(unittest.TestCase):
     def test_sqlite_export_preserves_rebuild_markers(self):
         database = self.root / 'local.db'
         conn = sqlite3.connect(database)
-        conn.execute('create table config (section,name,value,option,ext)')
-        conn.executemany('insert into config values (?,?,?,?,?)', [
-            ('rule', 'COMMENT', b.BEGIN, '0', '0'),
-            ('rule', 'DOMAIN', 'example.com', 'PROXY', ''),
-            ('rule', 'COMMENT', b.END, '0', '0'),
-            ('rule', 'FINAL', '', 'PROXY', '')])
+        conn.execute('create table config (section,name,value,option,ext,remarks)')
+        conn.executemany('insert into config values (?,?,?,?,?,?)', [
+            ('rule', 'COMMENT', b.BEGIN, '0', '0', ''),
+            ('rule', 'DOMAIN', 'example.com', 'PROXY', '', '示例规则'),
+            ('rule', 'COMMENT', b.END, '0', '0', ''),
+            ('rule', 'FINAL', '', 'PROXY', '', '')])
         conn.commit(); conn.close()
         output = self.root / 'private.conf'
         subprocess.run([sys.executable, str(ROOT / 'tools/export_local.py'), '--database', str(database), '--output', str(output)], check=True, capture_output=True)
         text = output.read_text()
         self.assertIn(b.BEGIN, text)
         self.assertIn(b.END, text)
+        self.assertIn('DOMAIN,example.com,PROXY // 示例规则', text)
         self.assertLess(text.index(b.BEGIN), text.index('DOMAIN,example.com,PROXY'))
         self.assertEqual(output.stat().st_mode & 0o777, 0o600)
 

@@ -1,11 +1,48 @@
 {
-  "policy_aliases": {"谷歌AI": "谷歌服务", "Facebook": "Facebook(Meta)"},
-  "preferred_nodes": {"谷歌服务": "CF-VLESS-WARP-80"},
+  "policy_aliases": {
+    "谷歌AI": "谷歌服务",
+    "Facebook": "Facebook(Meta)"
+  },
+  "preferred_nodes": {
+    "谷歌服务": "CF-VLESS-WARP-80"
+  },
   "rules": [
-    {"file": "rules/DirectCustom.list", "policy": "DIRECT"},
-    {"file": "rules/UpstreamCustom.list", "policy": "前置"},
-    {"file": "rules/GitHubCustom.list", "policy": "GitHub"},
-    {"file": "rules/GoogleOverrides.list", "policy": "谷歌服务"},
-    {"file": "rules/MetaCustom.list", "policy": "Facebook(Meta)"}
-  ]
+    {
+      "file": "rules/BootstrapDirect.list",
+      "policy": "DIRECT",
+      "id": "bootstrap-direct",
+      "title": "基础网络 · 代理入口直连"
+    },
+    {
+      "file": "rules/PersonalDirect.list",
+      "policy": "DIRECT",
+      "id": "personal-direct",
+      "title": "个人网站 · 直连"
+    },
+    {
+      "file": "rules/UpstreamCustom.list",
+      "policy": "前置",
+      "id": "front-proxy",
+      "title": "个人网站 · 前置代理"
+    },
+    {
+      "file": "rules/GitHubCustom.list",
+      "policy": "GitHub",
+      "id": "github-copilot",
+      "title": "开发工具 · GitHub 与 Copilot"
+    },
+    {
+      "file": "rules/GoogleOverrides.list",
+      "policy": "谷歌服务",
+      "id": "google-overrides",
+      "title": "Google · AI 与认证优先规则"
+    },
+    {
+      "file": "rules/MetaCustom.list",
+      "policy": "Facebook(Meta)",
+      "id": "meta-overrides",
+      "title": "Meta · Muse 与 Threads 补充"
+    }
+  ],
+  "bundled_rules": true
 }

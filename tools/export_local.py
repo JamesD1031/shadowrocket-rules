@@ -15,7 +15,9 @@ def export(db):
         if conn.execute('pragma quick_check').fetchone()[0] != 'ok':
             raise ValueError('Database integrity check failed')
         sections = {}
-        for section, name, value, option, ext in conn.execute('select section,name,value,option,ext from config order by rowid'):
+        columns = {row[1] for row in conn.execute('pragma table_info(config)')}
+        remark_column = 'remarks' if 'remarks' in columns else "''"
+        for section, name, value, option, ext, remark in conn.execute('select section,name,value,option,ext,' + remark_column + ' from config order by rowid'):
             if section not in TITLES:
                 raise ValueError('Unknown database section; export using the native app instead')
             lines = sections.setdefault(section, [])
@@ -25,6 +27,8 @@ def export(db):
                 continue
             if section == 'rule':
                 line = ','.join([name] + ([value] if value else []) + ([option] if option else []) + ([ext] if ext else []))
+                if remark:
+                    line += ' // ' + remark
             elif section == 'urlrewrite':
                 line = ' '.join(s for s in [name, value, option, ext] if s)
             else:

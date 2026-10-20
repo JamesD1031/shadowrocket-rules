@@ -40,7 +40,7 @@ jobs:
           python3 tools/render_module.py
       - name: Publish validated changes
         run: |
-          git add upstream release/routing.module
+          git add upstream release
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if git diff --cached --quiet; then
