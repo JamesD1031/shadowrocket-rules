@@ -18,7 +18,9 @@ https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rou
 
 GitHub Actions 每 6 小时检查一次 `LOWERTOP/Shadowrocket` 的 `lazy_group.conf`，约北京时间 02:17、08:17、14:17、20:17。GitHub 可能延迟调度。也支持 Actions 页面手动 Run workflow。
 
-发现新版本后下载固定提交，校验格式、策略名和维护测试，再直接提交更新 `release/routing.module`，无需手动合并 PR。没有变化时不产生提交；失败时保留上一版模块，按 GitHub 的 Actions 通知设置提醒。
+发现新版本后下载固定提交，校验格式、策略名和维护测试，再直接提交更新 `release/routing.module`，无需手动合并 PR。没有变化时通常不产生提交；失败时保留上一版模块，按 GitHub 的 Actions 通知设置提醒。
+
+若连续 30 天没有提交，工作流会生成一次不改文件的保活提交，避免公开仓库因 [60 天无活动而暂停定时任务](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows)。
 
 自动发布只跟进 `[Rule]`。DNS、Hosts、重写、脚本、MITM 与新增策略组不自动应用到本机；未知规则类型或本机不存在的策略名会阻止发布，等待维护。旧上游快照按提交保存在 `upstream/history/`，可追溯和回滚。
 

@@ -41,12 +41,20 @@ jobs:
       - name: Publish validated changes
         run: |
           git add upstream release/routing.module
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if git diff --cached --quiet; then
+            # Public repository schedules pause after 60 inactive days.
+            # A monthly empty commit keeps the cloud monitor active without changing rules.
+            if (( $(date +%s) - $(git log -1 --format=%ct) >= 30 * 86400 )); then
+              git commit --allow-empty -m 'Keep scheduled rule checks active'
+              git push origin HEAD:main
+              echo 'Monthly schedule keepalive; rules unchanged.' >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
             echo 'No upstream rule changes.' >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Update validated cloud routing rules'
           git push origin HEAD:main
           echo 'Updated public routing module; no manual PR merge is required.' >> "$GITHUB_STEP_SUMMARY"
