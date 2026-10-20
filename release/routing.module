@@ -1,102 +1,47 @@
 #!name=James 云端分流规则
-#!desc=自动跟踪懒人规则；节点选择和证书保留在本机
+#!desc=分类规则集；中文名称；节点选择和证书保留在本机
 # Upstream commit: e1ee7d7a201fe55cfa3ec8f93d70fd6a76a33a3f
 
 [Rule]
-DOMAIN-SUFFIX,cf.090227.xyz,DIRECT
-DOMAIN,warp.jame.codes,DIRECT
-IP-CIDR,172.64.149.159/32,DIRECT,no-resolve
-IP-CIDR,20.46.119.115/32,DIRECT,no-resolve
-DOMAIN-SUFFIX,yuketang.cn,DIRECT
-DOMAIN-SUFFIX,sustech.edu.cn,DIRECT
-DOMAIN-SUFFIX,hybgzs.com,DIRECT
-DOMAIN-SUFFIX,l0veyou.com,前置
-DOMAIN-SUFFIX,linux.do,前置
-DOMAIN-SUFFIX,github.com,GitHub
-DOMAIN-SUFFIX,githubusercontent.com,GitHub
-DOMAIN-SUFFIX,githubassets.com,GitHub
-DOMAIN-SUFFIX,github.io,GitHub
-DOMAIN-SUFFIX,github.blog,GitHub
-DOMAIN-SUFFIX,github.community,GitHub
-DOMAIN-SUFFIX,github.dev,GitHub
-DOMAIN-SUFFIX,githubapp.com,GitHub
-DOMAIN-SUFFIX,githubcopilot.com,GitHub
-DOMAIN-SUFFIX,githubnext.com,GitHub
-DOMAIN-SUFFIX,githubpreview.dev,GitHub
-DOMAIN-SUFFIX,githubstatus.com,GitHub
-DOMAIN-SUFFIX,githubuniverse.com,GitHub
-DOMAIN-SUFFIX,githubhackathon.com,GitHub
-DOMAIN-SUFFIX,ghcr.io,GitHub
-DOMAIN-SUFFIX,git.io,GitHub
-DOMAIN-SUFFIX,dependabot.com,GitHub
-DOMAIN-SUFFIX,github-cloud.s3.amazonaws.com,GitHub
-DOMAIN-SUFFIX,github-production-release-asset-2e65be.s3.amazonaws.com,GitHub
-DOMAIN-SUFFIX,github-atom-io-herokuapp-com.freetls.fastly.net,GitHub
-DOMAIN-SUFFIX,github-avatars.oss-cn-hongkong.aliyuncs.com,GitHub
-DOMAIN-SUFFIX,gemini.google.com,谷歌服务
-DOMAIN-SUFFIX,bard.google.com,谷歌服务
-DOMAIN-SUFFIX,gemini.gstatic.com,谷歌服务
-DOMAIN-SUFFIX,aistudio.google.com,谷歌服务
-DOMAIN-SUFFIX,ai.google.dev,谷歌服务
-DOMAIN-SUFFIX,antigravity.google,谷歌服务
-DOMAIN,accounts.google.com,谷歌服务
-DOMAIN-SUFFIX,googleapis.com,谷歌服务
-DOMAIN-SUFFIX,generativeai.google,谷歌服务
-DOMAIN-SUFFIX,makersuite.google.com,谷歌服务
-DOMAIN,aistudio.google.com,谷歌服务
-DOMAIN,alkalicore-pa.clients6.google.com,谷歌服务
-DOMAIN,alkalimakersuite-pa.clients6.google.com,谷歌服务
-DOMAIN,antigravity.google,谷歌服务
-DOMAIN,antigravity-unleash.goog,谷歌服务
-DOMAIN-SUFFIX,deepmind.com,谷歌服务
-DOMAIN-SUFFIX,deepmind.google,谷歌服务
-DOMAIN-SUFFIX,gemini.google,谷歌服务
-DOMAIN,ai.google.dev,谷歌服务
-DOMAIN,bard.google.com,谷歌服务
-DOMAIN,gemini.google.com,谷歌服务
-DOMAIN,gemini.gstatic.com,谷歌服务
-DOMAIN,jules.google.com,谷歌服务
-DOMAIN-KEYWORD,notebooklm.google,谷歌服务
-DOMAIN-KEYWORD,labs.google,谷歌服务
-DOMAIN,antigravity-hub-auto-updater-974169037036.us-central1.run.app,谷歌服务
-DOMAIN-SUFFIX,muse.ai,Facebook(Meta)
-DOMAIN-SUFFIX,threads.net,Facebook(Meta)
-DOMAIN-SUFFIX,threads.com,Facebook(Meta)
-RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/AI.txt,AI
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,YOUTUBE
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list,NETFLIX
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Disney/Disney.list,DISNEY+
-DOMAIN-SUFFIX,litix.io,MAX
-DOMAIN-SUFFIX,discomax.com,MAX
-DOMAIN-SUFFIX,brightline.tv,MAX
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/HBO/HBO.list,MAX
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list,SPOTIFY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list,TELEGRAM
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/PayPal/PayPal.list,PAYPAL
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitter/Twitter.list,TWITTER
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Facebook/Facebook.list,Facebook(Meta)
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Amazon/Amazon.list,AMAZON
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Sony/Sony.list,游戏平台
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Nintendo/Nintendo.list,游戏平台
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Epic/Epic.list,游戏平台
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SteamCN/SteamCN.list,游戏平台
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Steam/Steam.list,游戏平台
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list,游戏平台
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list,微软服务
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list,谷歌服务
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list,苹果服务
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/BiliBili/BiliBili.list,哔哩哔哩
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/NetEaseMusic/NetEaseMusic.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Baidu/Baidu.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouBan/DouBan.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Sina/Sina.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Zhihu/Zhihu.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/XiaoHongShu/XiaoHongShu.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouYin/DouYin.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list,TIKTOK
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list,DIRECT
-GEOIP,CN,DIRECT
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/bootstrap-direct-ac16409cfda8239d.list,DIRECT // 基础网络 · 代理入口直连
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/personal-direct-4c583df4011cf1e6.list,DIRECT // 个人网站 · 直连
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/front-proxy-5af44238a7963b8b.list,前置 // 个人网站 · 前置代理
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/github-copilot-dbe9e3f63fc65918.list,GitHub // 开发工具 · GitHub 与 Copilot
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-overrides-3c34fda4f985d740.list,谷歌服务 // Google · AI 与认证优先规则
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/meta-overrides-11e4a51e3e6f78ff.list,Facebook(Meta) // Meta · Muse 与 Threads 补充
+RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/AI.txt,AI // AI · OpenAI、Claude、Cursor 等
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,YOUTUBE // 影音 · YouTube
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list,NETFLIX // 影音 · Netflix
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Disney/Disney.list,DISNEY+ // 影音 · Disney+
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/max-extra-2e38b7a845a043f9.list,MAX // 影音 · Max 补充域名
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/HBO/HBO.list,MAX // 影音 · Max 与 HBO
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list,SPOTIFY // 影音 · Spotify
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list,TELEGRAM // 社交 · Telegram
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/PayPal/PayPal.list,PAYPAL // 平台支付 · PayPal
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitter/Twitter.list,TWITTER // 社交 · X / Twitter
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Facebook/Facebook.list,Facebook(Meta) // Meta · Facebook 与 Instagram 常规规则
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Amazon/Amazon.list,AMAZON // 平台购物 · Amazon
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Sony/Sony.list,游戏平台 // 游戏 · Sony / PlayStation
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Nintendo/Nintendo.list,游戏平台 // 游戏 · Nintendo
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Epic/Epic.list,游戏平台 // 游戏 · Epic
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SteamCN/SteamCN.list,游戏平台 // 游戏 · Steam 国内服务
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Steam/Steam.list,游戏平台 // 游戏 · Steam 国际服务
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list,游戏平台 // 游戏 · 其他游戏平台
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list,PROXY // 开发工具 · GitHub 上游规则（代理）
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list,微软服务 // 平台服务 · 微软
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list,谷歌服务 // Google · 常规服务
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list,苹果服务 // 平台服务 · 苹果
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/BiliBili/BiliBili.list,哔哩哔哩 // 影音 · 哔哩哔哩
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/NetEaseMusic/NetEaseMusic.list,DIRECT // 国内直连 · 网易云音乐
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Baidu/Baidu.list,DIRECT // 国内直连 · 百度
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouBan/DouBan.list,DIRECT // 国内直连 · 豆瓣
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list,DIRECT // 国内直连 · 微信
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Sina/Sina.list,DIRECT // 国内直连 · 新浪
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Zhihu/Zhihu.list,DIRECT // 国内直连 · 知乎
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/XiaoHongShu/XiaoHongShu.list,DIRECT // 国内直连 · 小红书
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouYin/DouYin.list,DIRECT // 国内直连 · 抖音
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list,TIKTOK // 影音 · TikTok
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list,PROXY // 基础网络 · 海外通用代理
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list,DIRECT // 基础网络 · 国内通用直连
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list,DIRECT // 基础网络 · 局域网直连
+GEOIP,CN,DIRECT // 基础网络 · 中国 IP 直连

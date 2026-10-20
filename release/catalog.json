@@ -1,0 +1,254 @@
+[
+  {
+    "title": "基础网络 · 代理入口直连",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/bootstrap-direct-ac16409cfda8239d.list,DIRECT",
+    "bundle": "release/rules/bootstrap-direct-ac16409cfda8239d.list",
+    "expanded_count": 4
+  },
+  {
+    "title": "个人网站 · 直连",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/personal-direct-4c583df4011cf1e6.list,DIRECT",
+    "bundle": "release/rules/personal-direct-4c583df4011cf1e6.list",
+    "expanded_count": 3
+  },
+  {
+    "title": "个人网站 · 前置代理",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/front-proxy-5af44238a7963b8b.list,前置",
+    "bundle": "release/rules/front-proxy-5af44238a7963b8b.list",
+    "expanded_count": 2
+  },
+  {
+    "title": "开发工具 · GitHub 与 Copilot",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/github-copilot-dbe9e3f63fc65918.list,GitHub",
+    "bundle": "release/rules/github-copilot-dbe9e3f63fc65918.list",
+    "expanded_count": 21
+  },
+  {
+    "title": "Google · AI 与认证优先规则",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-overrides-3c34fda4f985d740.list,谷歌服务",
+    "bundle": "release/rules/google-overrides-3c34fda4f985d740.list",
+    "expanded_count": 26
+  },
+  {
+    "title": "Meta · Muse 与 Threads 补充",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/meta-overrides-11e4a51e3e6f78ff.list,Facebook(Meta)",
+    "bundle": "release/rules/meta-overrides-11e4a51e3e6f78ff.list",
+    "expanded_count": 3
+  },
+  {
+    "title": "AI · OpenAI、Claude、Cursor 等",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/AI.txt,AI",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "影音 · YouTube",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,YOUTUBE",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "影音 · Netflix",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list,NETFLIX",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "影音 · Disney+",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Disney/Disney.list,DISNEY+",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "影音 · Max 补充域名",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/max-extra-2e38b7a845a043f9.list,MAX",
+    "bundle": "release/rules/max-extra-2e38b7a845a043f9.list",
+    "expanded_count": 3
+  },
+  {
+    "title": "影音 · Max 与 HBO",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/HBO/HBO.list,MAX",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "影音 · Spotify",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list,SPOTIFY",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "社交 · Telegram",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list,TELEGRAM",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "平台支付 · PayPal",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/PayPal/PayPal.list,PAYPAL",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "社交 · X / Twitter",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitter/Twitter.list,TWITTER",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "Meta · Facebook 与 Instagram 常规规则",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Facebook/Facebook.list,Facebook(Meta)",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "平台购物 · Amazon",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Amazon/Amazon.list,AMAZON",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "游戏 · Sony / PlayStation",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Sony/Sony.list,游戏平台",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "游戏 · Nintendo",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Nintendo/Nintendo.list,游戏平台",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "游戏 · Epic",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Epic/Epic.list,游戏平台",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "游戏 · Steam 国内服务",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SteamCN/SteamCN.list,游戏平台",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "游戏 · Steam 国际服务",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Steam/Steam.list,游戏平台",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "游戏 · 其他游戏平台",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list,游戏平台",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "开发工具 · GitHub 上游规则（代理）",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list,PROXY",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "平台服务 · 微软",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list,微软服务",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "Google · 常规服务",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list,谷歌服务",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "平台服务 · 苹果",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list,苹果服务",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "影音 · 哔哩哔哩",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/BiliBili/BiliBili.list,哔哩哔哩",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "国内直连 · 网易云音乐",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/NetEaseMusic/NetEaseMusic.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "国内直连 · 百度",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Baidu/Baidu.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "国内直连 · 豆瓣",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouBan/DouBan.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "国内直连 · 微信",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "国内直连 · 新浪",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Sina/Sina.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "国内直连 · 知乎",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Zhihu/Zhihu.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "国内直连 · 小红书",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/XiaoHongShu/XiaoHongShu.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "国内直连 · 抖音",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouYin/DouYin.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "影音 · TikTok",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list,TIKTOK",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "基础网络 · 海外通用代理",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list,PROXY",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "基础网络 · 国内通用直连",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "基础网络 · 局域网直连",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  },
+  {
+    "title": "基础网络 · 中国 IP 直连",
+    "rule": "GEOIP,CN,DIRECT",
+    "bundle": null,
+    "expanded_count": 1
+  }
+]
