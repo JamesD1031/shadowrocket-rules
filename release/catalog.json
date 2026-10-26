@@ -49,9 +49,9 @@
   },
   {
     "title": "AI · 个人补充规则",
-    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/ai-custom-1683196f46a285c3.list,AI",
-    "bundle": "release/rules/ai-custom-1683196f46a285c3.list",
-    "expanded_count": 1
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/ai-custom-75f4d4235768b76e.list,AI",
+    "bundle": "release/rules/ai-custom-75f4d4235768b76e.list",
+    "expanded_count": 4
   },
   {
     "title": "AI · OpenAI、Claude、Cursor 等",
