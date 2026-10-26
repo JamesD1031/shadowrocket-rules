@@ -1,0 +1,4 @@
+# YouTube · 共享 Google API 优先规则
+DOMAIN-SUFFIX,youtube.googleapis.com
+DOMAIN-SUFFIX,youtubei.googleapis.com
+DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com

@@ -7,7 +7,9 @@ RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/re
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/personal-direct-4c583df4011cf1e6.list,DIRECT // 个人网站 · 直连
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/front-proxy-5af44238a7963b8b.list,前置 // 个人网站 · 前置代理
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/github-copilot-dbe9e3f63fc65918.list,GitHub // 开发工具 · GitHub 与 Copilot
-RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-overrides-3c34fda4f985d740.list,谷歌服务 // Google · AI 与认证优先规则
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-ai-4fc127c59c9028a9.list,谷歌AI // Google AI · Gemini、AI Studio 与 Antigravity
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/youtube-overrides-737e3089d05e0edf.list,YouTube // YouTube · 共享 Google API 优先规则
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-common-c82e24a56397e064.list,谷歌服务 // Google · 共享 API 与账号（AI 精准规则后兜底）
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/meta-overrides-11e4a51e3e6f78ff.list,Facebook(Meta) // Meta · Muse 与 Threads 补充
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/ai-custom-1683196f46a285c3.list,AI // AI · 个人补充规则
 RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/AI.txt,AI // AI · OpenAI、Claude、Cursor 等

@@ -24,10 +24,22 @@
     "expanded_count": 21
   },
   {
-    "title": "Google · AI 与认证优先规则",
-    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-overrides-3c34fda4f985d740.list,谷歌服务",
-    "bundle": "release/rules/google-overrides-3c34fda4f985d740.list",
-    "expanded_count": 26
+    "title": "Google AI · Gemini、AI Studio 与 Antigravity",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-ai-4fc127c59c9028a9.list,谷歌AI",
+    "bundle": "release/rules/google-ai-4fc127c59c9028a9.list",
+    "expanded_count": 22
+  },
+  {
+    "title": "YouTube · 共享 Google API 优先规则",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/youtube-overrides-737e3089d05e0edf.list,YouTube",
+    "bundle": "release/rules/youtube-overrides-737e3089d05e0edf.list",
+    "expanded_count": 3
+  },
+  {
+    "title": "Google · 共享 API 与账号（AI 精准规则后兜底）",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-common-c82e24a56397e064.list,谷歌服务",
+    "bundle": "release/rules/google-common-c82e24a56397e064.list",
+    "expanded_count": 2
   },
   {
     "title": "Meta · Muse 与 Threads 补充",
