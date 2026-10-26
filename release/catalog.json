@@ -36,6 +36,12 @@
     "expanded_count": 3
   },
   {
+    "title": "AI · 个人补充规则",
+    "rule": "RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/ai-custom-1683196f46a285c3.list,AI",
+    "bundle": "release/rules/ai-custom-1683196f46a285c3.list",
+    "expanded_count": 1
+  },
+  {
     "title": "AI · OpenAI、Claude、Cursor 等",
     "rule": "RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/AI.txt,AI",
     "bundle": null,

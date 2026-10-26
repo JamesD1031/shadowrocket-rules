@@ -9,6 +9,7 @@ RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/re
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/github-copilot-dbe9e3f63fc65918.list,GitHub // 开发工具 · GitHub 与 Copilot
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-overrides-3c34fda4f985d740.list,谷歌服务 // Google · AI 与认证优先规则
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/meta-overrides-11e4a51e3e6f78ff.list,Facebook(Meta) // Meta · Muse 与 Threads 补充
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/ai-custom-1683196f46a285c3.list,AI // AI · 个人补充规则
 RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/AI.txt,AI // AI · OpenAI、Claude、Cursor 等
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,YOUTUBE // 影音 · YouTube
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list,NETFLIX // 影音 · Netflix
