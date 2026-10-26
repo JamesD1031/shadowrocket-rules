@@ -16,7 +16,7 @@ https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rou
 
 ## 分类规则集
 
-个人规则按代理入口、个人直连、前置、GitHub/Copilot、Google AI、YouTube API、Google 共享 API/账号、Meta/Muse、其他 AI 分成 9 个包，另打包 Max 补充规则。AI 补充包含 hark.com、Delta/Zed 的 zed.dev 及其子域名。原有上游列表继续订阅，所有条目带中文备注。
+个人规则按代理入口、个人直连、前置、GitHub/Copilot、Google AI、YouTube API、Google 共享 API/账号、Meta/Muse、其他 AI 分成 9 个包，另打包 Max 补充规则。AI 补充包含 hark.com 及其子域名。原有上游列表继续订阅，所有条目带中文备注。
 
 查看 [中文分类清单](release/分类清单.md) 或 [机器可读索引](release/catalog.json)。当前客户端的原生列表仍以 URL 为标题；中文备注不能替换客户端标题。
 

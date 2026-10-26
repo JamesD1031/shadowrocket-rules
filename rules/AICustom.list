@@ -1,6 +1,2 @@
 # Personal AI additions; uses the existing AI policy group.
 DOMAIN-SUFFIX,hark.com
-
-# Delta and Zed: account, subscription, model catalog and hosted completions.
-# Includes delta.zed.dev, cloud.zed.dev, api.zed.dev and dashboard.zed.dev.
-DOMAIN-SUFFIX,zed.dev
