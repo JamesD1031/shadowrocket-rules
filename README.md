@@ -16,7 +16,7 @@ https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rou
 
 ## 分类规则集
 
-个人规则按「代理入口直连、个人站点直连、前置代理、GitHub/Copilot、Google AI/认证、Meta/Muse」生成 6 个包，另打包 Max 补充规则。保留原有上游远程规则集的匹配顺序与策略，为所有条目添加中文备注。
+个人规则按「代理入口直连、个人站点直连、前置代理、GitHub/Copilot、Google AI/认证、Meta/Muse、AI 补充」生成 7 个包，另打包 Max 补充规则。AI 补充包含 hark.com 及其子域名，使用原有 AI 分组。保留原有上游远程规则集的匹配顺序与策略，为所有条目添加中文备注。
 
 查看 [中文分类清单](release/分类清单.md) 或 [机器可读索引](release/catalog.json)。当前客户端的原生列表仍以 URL 为标题；中文备注不能替换客户端标题。
 

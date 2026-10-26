@@ -42,6 +42,12 @@
       "policy": "Facebook(Meta)",
       "id": "meta-overrides",
       "title": "Meta · Muse 与 Threads 补充"
+    },
+    {
+      "file": "rules/AICustom.list",
+      "policy": "AI",
+      "id": "ai-custom",
+      "title": "AI · 个人补充规则"
     }
   ],
   "bundled_rules": true
