@@ -35,12 +35,12 @@ class CloudTests(unittest.TestCase):
         text = renderer.render(self.root)
         self.assertEqual(list(renderer.parse(text)), ['rule'])
         self.assertNotIn('FINAL,', text)
-        self.assertNotIn('谷歌AI', text)
+        self.assertIn('谷歌AI', text)
         entries, artifacts = renderer.bundle_plan(self.root)
         self.assertTrue(artifacts)
         flattened = [line for entry in entries for line in entry['expanded']]
         self.assertEqual(flattened, renderer.expanded_rules(self.root))
-        self.assertIn('DOMAIN,antigravity-unleash.goog,谷歌服务', flattened)
+        self.assertIn('DOMAIN,antigravity-unleash.goog,谷歌AI', flattened)
         self.assertIn('IP-CIDR,20.46.119.115/32,DIRECT,no-resolve', flattened)
         self.assertIn(' // Google · 常规服务', text)
         for entry in entries:

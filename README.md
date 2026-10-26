@@ -16,7 +16,7 @@ https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rou
 
 ## 分类规则集
 
-个人规则按「代理入口直连、个人站点直连、前置代理、GitHub/Copilot、Google AI/认证、Meta/Muse、AI 补充」生成 7 个包，另打包 Max 补充规则。AI 补充包含 hark.com 及其子域名，使用原有 AI 分组。保留原有上游远程规则集的匹配顺序与策略，为所有条目添加中文备注。
+个人规则按代理入口、个人直连、前置、GitHub/Copilot、Google AI、YouTube API、Google 共享 API/账号、Meta/Muse、其他 AI 分成 9 个包，另打包 Max 补充规则。AI 补充包含 hark.com 及其子域名。原有上游列表继续订阅，所有条目带中文备注。
 
 查看 [中文分类清单](release/分类清单.md) 或 [机器可读索引](release/catalog.json)。当前客户端的原生列表仍以 URL 为标题；中文备注不能替换客户端标题。
 
@@ -39,3 +39,9 @@ GitHub Actions 每 6 小时检查一次 `LOWERTOP/Shadowrocket` 的 `lazy_group.
 维护者每次修改个人规则后将公开源文件推送到此仓库，随后云端自动校验并生成模块。不要将本机导出或凭据提交到此公开仓库。
 
 上游来源：[LOWERTOP/Shadowrocket](https://github.com/LOWERTOP/Shadowrocket)。当前固定提交和 SHA-256 见 `upstream/source.json`。
+
+## Google AI 独立分组
+
+新版需要本机已有 AI、谷歌AI、谷歌服务、YouTube 四个独立组。先在本机建立谷歌AI，再更新模块；单独订阅模块不会自动建组。已有设备的节点选择继续保留。
+
+Google AI 精准规则优先，其次 YouTube API、共享 Google API/账号兜底，然后才是通用 AI、YouTube 与常规 Google 上游列表。这样上游 AI.txt 的 googleapis.com 宽规则不会接走普通 API，YouTube API 也保持独立。

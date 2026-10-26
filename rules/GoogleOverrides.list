@@ -1,3 +1,4 @@
+# Legacy merged Google rules; not used by config/manifest.json.
 # Personal predicates only; policy is assigned by config/manifest.json.
 # Google block adapted from iab0x00/ProxyRules/Rule/AI.txt, plus observed local Antigravity endpoints.
 DOMAIN-SUFFIX,gemini.google.com

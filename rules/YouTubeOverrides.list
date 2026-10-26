@@ -1,0 +1,5 @@
+# YouTube API hosts listed by the upstream YouTube ruleset.
+# Keep before GoogleCommon.list so they follow the independent YouTube group.
+DOMAIN-SUFFIX,youtube.googleapis.com
+DOMAIN-SUFFIX,youtubei.googleapis.com
+DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com

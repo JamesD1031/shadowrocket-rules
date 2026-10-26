@@ -10,3 +10,5 @@
 
 - Preserve match order and policy when bundling. Keep content-addressed old bundles available for cached modules.
 - Chinese remarks do not replace URL titles in the tested native client. Keep the readable classification catalog current.
+
+- Google AI uses 谷歌AI independently. Keep Google AI precise rules and YouTube API exceptions ahead of GoogleCommon, and GoogleCommon ahead of upstream AI.txt. The local group must exist before enabling the new module.

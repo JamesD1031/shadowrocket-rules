@@ -1,0 +1,4 @@
+# Shared Google services after precise Google AI, before upstream AI.txt.
+# Upstream AI.txt also includes googleapis.com, so this exception must stay early.
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN,accounts.google.com

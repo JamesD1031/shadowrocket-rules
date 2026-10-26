@@ -132,10 +132,23 @@ def build(upstream_text, local_text, manifest, root=ROOT, previous_text=None, in
     result['proxy'] = list(local.get('proxy', []))  # Private node definitions never come from the repository.
     up_groups = rename_groups(upstream['proxy group'], aliases)
     local_groups = [s for s in local.get('proxy group', []) if not any(s.split('=', 1)[0].strip().casefold() == k for k in aliases)]
-    # Facebook(Meta) is the personal replacement for upstream Facebook; 谷歌AI is intentionally merged.
+    # Facebook(Meta) is the personal replacement for upstream Facebook.
     old_groups = rename_groups(previous.get('proxy group', []), aliases)
     result['proxy group'] = merged_values(up_groups, local_groups, old_groups)
     groups = kv(result['proxy group'])
+    # Seed newly introduced local groups once; later local selections always win.
+    for policy, seed in manifest.get('group_seeds', {}).items():
+        key = policy.casefold()
+        if key in groups:
+            continue
+        source = groups.get(seed['source'].casefold())
+        if source is None:
+            raise ValueError('Group seed source missing: ' + seed['source'])
+        fields = [s for s in source[1].split(',') if not s.startswith('policy-select-name=')]
+        node = seed['default_node']
+        if not any(s.casefold() == node.casefold() for s in fields[1:]):
+            fields.insert(1, node)
+        groups[key] = (policy, ','.join(fields + ['policy-select-name=' + node]))
     for policy, node in manifest['preferred_nodes'].items():
         key = policy.casefold()
         if key not in groups:
