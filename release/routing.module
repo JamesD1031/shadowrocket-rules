@@ -11,7 +11,7 @@ RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/re
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/youtube-overrides-737e3089d05e0edf.list,YouTube // YouTube · 共享 Google API 优先规则
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/google-common-c82e24a56397e064.list,谷歌服务 // Google · 共享 API 与账号（AI 精准规则后兜底）
 RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/meta-overrides-11e4a51e3e6f78ff.list,Facebook(Meta) // Meta · Muse 与 Threads 补充
-RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/ai-custom-1683196f46a285c3.list,AI // AI · 个人补充规则
+RULE-SET,https://raw.githubusercontent.com/JamesD1031/shadowrocket-rules/main/release/rules/ai-custom-841d1c84f6f56b6c.list,AI // AI · 个人补充规则
 RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/AI.txt,AI // AI · OpenAI、Claude、Cursor 等
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,YOUTUBE // 影音 · YouTube
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list,NETFLIX // 影音 · Netflix
