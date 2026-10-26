@@ -1,2 +1,8 @@
 # Personal AI additions; uses the existing AI policy group.
 DOMAIN-SUFFIX,hark.com
+
+# Delta / Zed hosted AI: model catalog, completions and service API.
+# Official ChatGPT / Claude subscription hosts stay covered by upstream AI.txt.
+DOMAIN,cloud.zed.dev
+DOMAIN,api.zed.dev
+DOMAIN,delta.zed.dev
